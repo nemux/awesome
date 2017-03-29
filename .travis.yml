@@ -144,4 +144,4 @@ script:
       travis_run_in_fold "build_in_dir" cmake $CMAKE_ARGS "$SOURCE_DIRECTORY"
     fi
   - travis_run_in_fold "make" make
-  - export CI=true LC_ALL=C ; for x in $(seq 1 9) ; do export TAIL_ARG=$(printf -- "-s .%01d " $x) ; /usr/bin/time -f "${TAIL_ARG} %E" sh -c 'tests/run.sh >/dev/null 2>/dev/null' ; done
+  - export CI=true LC_ALL=C ; for x in $(seq 1 9) ; do export TAIL_ARG=$(printf -- "-s .%02d " $x) ; /usr/bin/time -f "${TAIL_ARG} %E" sh -c 'tests/run.sh >/dev/null 2>/dev/null' ; done
